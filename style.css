@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+#main{
+    font-family: "Roboto";
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0px 4px 20px rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+}
+
+.add_file{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-control{
+    width: 100%;
+    text-align: center;
+}
+
+.add_label{
+    font-size: 20px;
+    width: 90%;
+    border: 2px dashed #ced4da;
+    cursor: pointer;
+    color: #ced4da;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add_label:hover{
+    color: #EB5757;
+    border: 2px dashed #EB5757;
+}
+
+
+.input-group-text{
+    width: 50px;
+    padding: 0px 12px;
+    background: #f2f2f2;
+    color: #999999;
+    font-weight: 600;
+}
+
+#items-list{
+    max-height: 300px;
+    overflow-y: hide;
+    padding: 10px;
+}
+
+#item{
+    width: 90%;
+    box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.25);
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .3s;
+}
+
+#item:hover{
+    box-shadow: 0px 1px 15px rgba(128, 128, 128, 0.5);
+}
+
+#item .input-group-prepend{
+    z-index: 1;
+}
+
+#item .del_elem{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    background: url(img/delete.svg);
+    position: absolute;
+    z-index: 1000;
+    color: #fff;
+    top: -7px;
+    left: -7px;
+    cursor: pointer;
+}
+
+#item .item_name{
+    color: #666666;
+    font-weight: 500;
+}
+
+#item .input-group-text{
+    transition: .2s;
+}
+
+#item .form-control{
+    text-align: left;
+    color: #666666;
+    font-weight: 500;
+}
+
+#item .input-group-append{
+    background: transparent;
+    cursor: pointer;
+}
+
+#item .moving .input-group-text span{
+    transform: rotate(90deg);
+}
+
+.screen{    
+    margin: auto auto;
+    text-align: center;
+}
+
+
+.displays img, video, audio{
+    display: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(128, 128, 128, 0.25);
+}
+
+.displays audio{
+    border-radius: 40px;
+}
+
+
+h3{
+    color: #333333;
+    font-weight: 600;
+}
+
+.player h6{
+    color: #666666;
+    font-size: 15px;
+    font-weight: 600;
+}
+.liner{
+    display: none;
+}
+
+@media (max-width: 1010px){
+    .moving{
+        display: none;
+    }
+    .liner{
+        display: block;
+    }
+    .input-group-text{
+        display: none;
+    }
+}

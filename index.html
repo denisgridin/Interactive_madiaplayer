@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Медиапроигрыватель</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Приветствую!</h1>
+        <p class="lead">Для начала работы с плейером загрузите свои файлы в поле "Редактор"</p>
+        <hr class="my-4">
+        <p>Плейер воспроизводит звуки, картинки и видеозаписи</p>
+    </div>
+    <main id="main" class="mt-5 row col-md-10 col-sm-10 justify-content-around justify-self-center">
+        <div class="editor col-md-5 col-sm-12">
+            <h3 class="mb-2 text-center">Редактор</h3>
+            <ul id="items-list" @change="hideOverflow()">
+                    <item v-for="(file_title, index) in file_name" :file_title="file_title" :file_format="file_format[index]" :file_alt="file_alt[index]"></item>
+                    <div class="upload_file" id="add">
+                        <label for="myfile" class="add_label form-control">+</label>
+                        <input type="file" class="add_file" id="myfile" name="myfile" @change="get_info();">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="w-100 liner"></div>
+        <div class="player col-md-7 col-sm-12" @mousedown="dragDisplay($event)" draggable="true">
+            <h3 class="mb-2 text-center" >Проигрыватель</h3>
+            <div class="displays d-flex align-items-center" >
+                <img  :src=display_src class="draggable screen col-md-10 col-sm-12" id="display_img" >
+                <video controls id="display_vid" :src=display_src class="draggable  screen col-md-10 col-sm-12" ></video>
+                <audio id="display_aud" :src=display_src  class="draggable screen mt-5"    controls></audio>
+            </div>
+            <h6 class="mt-3  text-center">{{ display_title }}</h6>
+        </div>
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="script.js"></script>    
+</body>
+</html>                                                                 
